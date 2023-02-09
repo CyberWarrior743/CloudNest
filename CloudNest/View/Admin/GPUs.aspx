@@ -43,9 +43,12 @@
                               </div>
             <br />
                             <br />
-                            <button type="submit" class="btn btn-success">Add</button>
-                            <button type="submit" class="btn btn-primary">Edit</button>
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <label id="ErrorMsg" runat="server"></label>
+
+                            <asp:Button type="submit" id="EditBtn" class="btn btn-success" Text="Edit" runat="server"/>
+                            <asp:Button type="submit" id="SaveBtn" class="btn btn-primary" Text="Save" runat="server" OnClick="SaveBtn_Click"/>
+                            <asp:Button type="submit" id="DeleteBtn" class="btn btn-danger" Text="Delete" runat="server"/>
+                            
                           </form>
 
                     </div>
