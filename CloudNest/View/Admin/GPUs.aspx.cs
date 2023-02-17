@@ -36,8 +36,9 @@ namespace CloudNest.View.Admin
                     string Version = Versiontb.Value;
                     int Price = Convert.ToInt32(Pricetb.Value.ToString());
                     string Status = AvailableCb.SelectedValue;
-                    string Query = "insert into GpuTB1 values('{0}','{1}','{2}','{3}','{4}')";
-                    Query= String.Format(Query, ModelNum, Brand, Version, Price, Status);
+                    string Query = $"INSERT INTO dbo.GpuTB1 (Brand, Version, Price, Status) " +
+                                    $" VALUES ('{Brand}','{Version}','{Price}','{Status}')";
+                    
                     Conn.SetData(Query);
                     ErrorMsg.InnerText = "Gpu Added";
                 }

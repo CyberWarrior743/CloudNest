@@ -35,8 +35,12 @@ namespace CloudNest.Models
             int rcnt = 0;
             if(Conn.State == ConnectionState.Closed)
             {
+                ConnStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Owner\Documents\CloudNestDB.mdf;Integrated Security=True;Connect Timeout=30";
+                Conn = new SqlConnection(ConnStr);
                 Conn.Open();
             }
+            cmd = new SqlCommand();
+            cmd.Connection = Conn;
             cmd.CommandText = Query;
             rcnt = cmd.ExecuteNonQuery();
             Conn.Close();
